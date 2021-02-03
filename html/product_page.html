@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket</title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" href="product_page.css">
+
+  <!-- Product list JS -->
+  <script src="product_list.js"></script>
+</head>
+
+<body>
+  <!-- header -->
+  <header id="header" style='z-index: 1'>
+    <!-- Primary navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light color-header-bg">
+      <!-- Rocket Logo -->
+      <a class="navbar-brand font-baloo font-size-16" href="landing_page.html">
+        <img src="images/clipart1530219.png" width="35" height="35" alt="">ROCKET
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Service & Support -->
+        <ul class="navbar-nav float-left">
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-18" href="maintenance.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link font-baloo font-weight-bold font-size-18 dropdown-toggle" href="#" id="navbarDropdown"
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Service
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fas fa-book"></i>
+                Terms</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fas fa-file-word"></i>
+                Warranty</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fas fa-syringe"></i>
+                Disease Control</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link font-baloo font-weight-bold font-size-18 dropdown-toggle" href="#" id="navbarDropdown"
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Support
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fa fa-envelope"></i>
+                Email</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fa fa-comments"></i>
+                Chat</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fa fa-phone"></i>
+                Phone Support</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="maintenance.html"><i class="fa fa-credit-card"></i> Make a
+                Payment</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Search box -->
+        <div class="search form-inline navbar-center m-auto">
+          <form action="search_results_page.html" method="GET">
+            <input id="search-box" class="form-control mr-sm-2" style="width:400px" type="textbox"
+              onfocus="this.value=''" placeholder="Search..." name="text">
+            <!-- <input class="form-control mr-sm-2" type="submit"> -->
+          </form>
+        </div>
+
+        <!-- Sign in & Cart section -->
+        <ul class="navbar-nav float-left">
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-16 px-4 border-left" href="maintenance.html"><i
+                class="fas fa-signature"></i> Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-16 px-4 border-left border-right"
+              href="index.php"><i class="fas fa-sign-in-alt"></i> Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-16 px-4 border-right" href="maintenance.html"><i
+                class="fas fa-shopping-cart"></i> Cart (0)</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Secondary navbar -->
+    <nav class="navbar-expand-lg navbar-dark color-navbar-bg">
+      <!-- Product categories -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto font-rubik">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Pokemons
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="maintenance.html"><i class="fas fa-seedling"></i> Wild</a>
+              <a class="dropdown-item" href="maintenance.html"><i class="fas fa-warehouse"></i> Farmed</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maintenance.html">Best Sellers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maintenance.html">New Releases</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maintenance.html">Coming Soon</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main id="main-site pb-5">
+    <!-- product -->
+    <section id="product" class="py-3">
+      <div class="container">
+        <div class="row">
+          <!-- Product picture -->
+          <div class="product-image col-sm-6 p-5" align="center"></div>
+
+          <!-- product information -->
+          <div class="product-info col-sm-6 pt-5 pb-5"></div>
+
+          <!-- Product Description -->
+          <div class="product-desc"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer id="footer" class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- About Rocket -->
+        <div class="col-lg-3 col-12">
+          <h4 class="font-rubik font-size-14">Rocket</h4>
+          <p class="font-size-12 font-rale text-white-50">"To denounce the evils of truth and love!
+            ..To extend our reach to the stars above!"</p>
+        </div>
+
+        <!-- Newslatter -->
+        <div class="col-lg-4 col-12">
+          <h4 class="font-rubik font-size-14">Newslatter</h4>
+          <form class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" style="width:auto;" placeholder="Email *">
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-info" position:relative;">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Company info -->
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-14">Information</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">About Us</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Delivery Information</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Privacy Policy</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Account pages -->
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-14">Account</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">My Account</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Order History</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Wish List</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Newslatters</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright text-center bg-dark py-2">
+      <p class="font-rale font-size-12 text-white-50">Copyright &copy; 2020 <a href="landing_page.html" class="text-info">Rocket</a></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="product.js"></script>
+
+  <script>
+    let searchBox = document.getElementById("search-box");
+    searchBox.value = '';
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+</html>

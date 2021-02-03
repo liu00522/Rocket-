@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket</title>
+  
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" typr="test/css" href="landing_page.css">
+
+  <!-- Product list JS -->
+  <script src="product_list.js"></script>
+</head>
+
+<body>
+  <!-- header -->
+  <header id="header" style='z-index: 1'>
+    <!-- Primary navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light color-header-bg">
+      <!-- Rocket Logo -->
+      <a class="navbar-brand font-baloo font-size-16" href="landing_page.html">
+        <img src="images/clipart1530219.png" width="35" height="35" alt="">ROCKET
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Service & Support -->
+        <ul class="navbar-nav float-left">
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-18" href="maintenance.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link font-baloo font-weight-bold font-size-18 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Service
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fas fa-book"></i> Terms</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fas fa-file-word"></i> Warranty</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fas fa-syringe"></i> Disease Control</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link font-baloo font-weight-bold font-size-18 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Support
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fa fa-envelope"></i> Email</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fa fa-comments"></i> Chat</a>
+              <a class="dropdown-item font-baloo" href="maintenance.html"><i class="fa fa-phone"></i> Phone Support</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="maintenance.html"><i class="fa fa-credit-card"></i> Make a Payment</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Search box -->
+        <div class="search form-inline navbar-center m-auto">
+          <form action="search_results_page.html" method="GET">
+            <input id="search-box" class="form-control mr-sm-2" style="width:400px" type="textbox" onfocus="this.value=''"
+              placeholder="Search..." name="text">
+            <!-- <input class="form-control mr-sm-2" type="submit"> -->
+          </form>
+        </div>
+
+        <!-- Sign in & Cart section -->
+        <ul class="navbar-nav float-left">
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-16 px-4 border-left" href="maintenance.html"><i class="fas fa-signature"></i> Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-16 px-4 border-left border-right" href="index.php"><i class="fas fa-sign-in-alt"></i> Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-baloo font-weight-bold font-size-16 px-4 border-right" href="maintenance.html"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Secondary navbar -->
+    <nav class="navbar-expand-lg navbar-dark color-navbar-bg">
+      <!-- Product categories -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto font-rubik">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pokemons
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="maintenance.html"><i class="fas fa-seedling"></i> Wild</a>
+              <a class="dropdown-item" href="maintenance.html"><i class="fas fa-warehouse"></i> Farmed</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maintenance.html">Best Sellers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maintenance.html">New Releases</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maintenance.html">Coming Soon</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main id="main-site"> 
+    <div class="container pb-5">
+      <!-- About Rocket -->
+      <div class="jumbotron" style="background: none;">
+        <h1 class="text-warning"> ROCKET</h1>
+        <p class="text-light"> A villainous team in pursuit of evil and the exploitation of Pokémon.<br>
+          We are based in the Ottawa-Gatineau region, with a small outpost in the Bate Island.
+        </p>
+      </div>
+
+      <!-- Featured products -->
+      <h3 class="text-info border-bottom py-3">This week's special deals!</h3>
+      <div class="grid">
+        <div class="grid-item">
+          <div class="item p-2">
+            <div class="product font-rale">
+              <a href="product_page.html"><img src="https://t1.daumcdn.net/cfile/tistory/233AF54B547972030A" alt="Psyduck" class="img-fluid"></a>
+              <div class="text-center pt-2">
+                <h6 class="text-white-50">Psyduck</h6>
+                <div class="rating text-warning font-size-12">
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <div class="price py-2">
+                    <span class="text-light font-size-16">$6,000</span>
+                    <span class="text-danger"><strike>$8,000</strike></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="grid-item">
+          <div class="item p-2">
+            <div class="product font-rale">
+              <a href="product_page.html"><img src="https://t1.daumcdn.net/cfile/tistory/253BD24B5479720309" alt="Golduck" class="img-fluid"></a>
+              <div class="text-center pt-2">
+                <h6 class="text-white-50">Golduck</h6>
+                <div class="rating text-warning font-size-12">
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="far fa-star"></i></span>
+                  <div class="price py-2">
+                    <span class="text-light font-size-16">$9,000</span>
+                    <span class="text-danger"><strike>$13,000</strike></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="grid-item">
+          <div class="item p-2">
+            <div class="product font-rale">
+              <a href="product_page.html"><img src="https://t1.daumcdn.net/cfile/tistory/25428C4C5480545B15" alt="Krabby" class="img-fluid"></a>
+              <div class="text-center pt-2">
+                <h6 class="text-white-50">Krabby</h6>
+                <div class="rating text-warning font-size-12">
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star-half-alt"></i></span>
+                  <div class="price py-2">
+                    <span class="text-light font-size-16">$4,500</span>
+                    <span class="text-danger"><strike>$6,000</strike></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="grid-item">
+          <div class="item p-2">
+            <div class="product font-rale">
+              <a href="product_page.html"><img src="https://t1.daumcdn.net/cfile/tistory/2244904C5480545D12" alt="Kingler" class="img-fluid"></a>
+              <div class="text-center pt-2">
+                <h6 class="text-white-50">Kingler</h6>
+                <div class="rating text-warning font-size-12">
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star-half-alt"></i></span>
+                  <div class="price py-2">
+                    <span class="text-light font-size-16">$5,000</span>
+                    <span class="text-danger"><strike>$8,000</strike></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pokemons by types -->
+      <h3 class="text-info border-bottom py-3">Types of Pokemons</h3>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card border-0" style="width: 18rem; background: none;" >
+            <a href="maintenance.html">
+              <img src="https://i.pinimg.com/564x/ce/40/ff/ce40ffe65d9bb1dab02e6c4fd3158f9f.jpg" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+              <a href="maintenance.html" class="btn btn-primary">Fire Pokemons!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card border-0"  style="width: 18rem; background: none;">
+            <a href="maintenance.html">
+              <img src="https://t1.daumcdn.net/cfile/tistory/241FD2335474A09A19" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+              <a href="maintenance.html" class="btn btn-primary">Ground Pokemons!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card border-0"  style="width: 18rem; background: none;">
+            <a href="maintenance.html">
+              <img src="https://i.pinimg.com/236x/09/1a/b8/091ab846fb11a480f3355c9a072df550.jpg" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+              <a href="maintenance.html" class="btn btn-primary">Electric Pokemons!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card border-0"  style="width: 18rem; background: none;">
+            <a href="maintenance.html">
+              <img src="https://i.pinimg.com/236x/7d/b1/e9/7db1e990dd24164c610071e58fe4555c.jpg" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+              <a href="maintenance.html" class="btn btn-primary">Ghost Pokemons!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card border-0"  style="width: 18rem; background: none;">
+            <a href="maintenance.html">
+              <img src="https://i.pinimg.com/564x/f8/64/da/f864da7524014824ce65710a69aba1cb.jpg" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+              <a href="maintenance.html" class="btn btn-primary">Fighting Pokemons!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card border-0"  style="width: 18rem; background: none;">
+            <a href="maintenance.html">
+              <img src="https://i.pinimg.com/564x/7f/5e/c2/7f5ec26dd066e36f50d79c2312d3f2a5.jpg" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+              <a href="maintenance.html" class="btn btn-primary">Water Pokemons!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="footer" class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- About Rocket -->
+        <div class="col-lg-3 col-12">
+          <h4 class="font-rubik font-size-14">Rocket</h4>
+          <p class="font-size-12 font-rale text-white-50">"To denounce the evils of truth and love!
+            ..To extend our reach to the stars above!"</p>
+        </div>
+
+        <!-- Newslatter -->
+        <div class="col-lg-4 col-12">
+          <h4 class="font-rubik font-size-14">Newslatter</h4>
+          <form class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" style="width:auto;" placeholder="Email *">
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-info" position:relative;">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Company info -->
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-14">Information</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">About Us</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Delivery Information</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Privacy Policy</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Account pages -->
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-14">Account</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">My Account</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Order History</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Wish List</a>
+            <a href="#" class="font-rale font-size-12 text-white-50 pb-1">Newslatters</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright text-center bg-dark py-2">
+      <p class="font-rale font-size-12 text-white-50">Copyright &copy; 2020 <a href="landing_page.html" class="text-info">Rocket</a></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="search.js"></script>
+
+  <script>
+    let searchBox = document.getElementById("search-box");
+    searchBox.value = '';
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
