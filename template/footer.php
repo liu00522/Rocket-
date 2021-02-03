@@ -53,8 +53,8 @@
   </footer>
 
   <!-- JS -->
-  <!-- <script src="index.js"></script>
-  <script src="product.js"></script> -->
+  <script src="index.js"></script>
+  <script src="product.js"></script>
   
   <script>
     let searchBox = document.getElementById("search-box");

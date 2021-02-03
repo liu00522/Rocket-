@@ -121,7 +121,7 @@
       if (isset($_POST['submit'])) {
         // Search string
         $str = $_POST['search'];
-        
+
         $sql = "SELECT * FROM products WHERE title LIKE '%$str%' or type LIKE '%$str%'";
         $stmt = mysqli_stmt_init($conn);
 
@@ -130,12 +130,13 @@
         } else {
           mysqli_stmt_execute($stmt);
           $result = mysqli_stmt_get_result($stmt);
-
-          // Display number of items and searched string
+          
+          // Number of items searched
+          $numOfProds = $result->num_rows;
           echo '
           <p class="font-baloo p-2 border-bottom font-size-20">
           <span class="text-white-50 font-weight-bold">
-          '.$result->num_rows.'</span>
+          '.$numOfProds.'</span>
           results for 
           <span class="text-warning">
           "'.$str.'"</span></p>';

@@ -1,9 +1,10 @@
 <?php
 include ('db.php');
 
-if (isset($_POST['upload'])) {
+if (isset($_POST['submit'])) {
+  $newFileName = $_POST['pkmName'];
+  $newFileName = strtolower(str_replace(" ", "-", $newFileName));
 
-  // Creating variables of user inputs
   $imgTitle = $_POST['pkmName'];
   $imgType = $_POST['pkmType'];
   $imgMSRP = $_POST['pkmMSRP'];
@@ -11,37 +12,54 @@ if (isset($_POST['upload'])) {
   $imgRate = $_POST['pkmRating'];
   $imgDesc = $_POST['pkmDesc'];
 
-  // Extract info of image file
+  // create file variables
   $file = $_FILES['imgFile'];
+  
+  // Extract info of image file
   $fileName = $file['name'];
+  $fileType = $file['type'];
   $fileTmpName = $file['tmp_name'];
   $fileError = $file['error'];
   $fileSize = $file['size'];
 
-  // Extract file extension
+  // File extension validation
   $fileExt = explode('.', $fileName);
   $fileActualExt = strtolower(end($fileExt));
 
-  // File validation: allowed file extensions and size (1MB)
+  // Allowed extensions and file size (10MB)
   $allowed = array('jpg', 'jpeg', 'png');
   if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {
-      if ($fileSize < 1000000) {
-        $imgFileName = $imgTitle . "." . $fileActualExt;
-        $fileDestination = "products/" . $imgFileName;
+      if ($fileSize < 10000000) {
+        $imgFullName = $newFileName . "." . $fileActualExt;
+        $fileDestination = "products/" . $imgFullName;
 
-        // Insert new image infomation into the database
-        $sql = "INSERT INTO products (title, type, MSRP, price, imgAddr, rating, pkmDesc) VALUES (?, ?, ?, ?, ?, ?, ?);";
+        $sql = "SELECT * FROM products;";
         $stmt = mysqli_stmt_init($conn);
+        // Retrieving the contents of the table
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-          echo "SQL statement has failed.";
+          echo "SQL statement failed.";
         } else {
-          mysqli_stmt_bind_param($stmt, "ssddsss", $imgTitle, $imgType, $imgMSRP, $imgPrice, $imgFileName, $imgRate, $imgDesc);
-          mysqli_stmt_execute($stmt);
+          // Executing the statement
+          mysqli_stmt_execute($stmt); 
+          // Grab the data from database
+          $result = mysqli_stmt_get_result($stmt);
+          $rowCount = mysqli_num_rows($result);
+          // Insert new row (as default will be 0)
+          $setImgOrder = $rowCount + 1;
 
-          // Upload image file to destination folder
-          move_uploaded_file($fileTmpName, $fileDestination);
-          header("Location: upload.php?upload=success");
+          // Insert new image into the database
+          $sql = "INSERT INTO products (title, type, MSRP, price, imgAddr, rating, pkmDesc) VALUES (?, ?, ?, ?, ?, ?, ?);";
+          if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "SQL statement failed.";
+          } else {
+            mysqli_stmt_bind_param($stmt, "ssddsss", $imgTitle, $imgType, $imgMSRP, $imgPrice, $imgFullName, $imgRate, $imgDesc);
+            mysqli_stmt_execute($stmt);
+
+            // Upload image to destination folder
+            move_uploaded_file($fileTmpName, $fileDestination);
+            header("Location: upload.php?upload=success");
+          }
         }
       } else {
         echo "Your file is too big.";

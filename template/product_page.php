@@ -75,7 +75,7 @@
             <!--- product price -->
             <table class="my-3" style="color: whitesmoke">
               <tr class="font-baloo font-size-16">
-                <td>M.S.R.P:</td>
+                <td>M.R.P:</td>
                 <td class="pl-3 text-danger"><strike>$'.$product["MSRP"].'</strike></td>
               </tr>
               <tr class="font-baloo font-size-16">

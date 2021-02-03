@@ -40,7 +40,7 @@
               <input type="file" name="imgFile" class="form-control-file pointer">
             </div>
             <div class="col-sm-1">
-              <button type="submit" name="upload" class="btn btn-sm btn-outline-warning font-weight-bold">UPLOAD</button>
+              <button type="submit" name="submit" class="btn btn-sm btn-outline-warning font-weight-bold">UPLOAD</button>
             </div>
           </div>
         </form>
@@ -64,10 +64,10 @@
         } else {
           mysqli_stmt_execute($stmt);
           $result = mysqli_stmt_get_result($stmt);
+          $numOfProds = $result->num_rows;
           
-          // Display total items in the inventory
           echo '<p class="font-baloo p-2 border-bottom font-size-20">Total
-            <span class="text-white-50 font-weight-bold">'.$result->num_rows.'</span>
+            <span class="text-white-50 font-weight-bold">'.$numOfProds.'</span>
             Pokemons in the inventory</p>';
 
           echo '<div class="searched-products">';
